@@ -1,0 +1,436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		57579FB62A49DEF4000AB293 /* Pagina_Inicial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57579FB52A49DEF4000AB293 /* Pagina_Inicial.swift */; };
+		57A6A8592A4ACB6C00166517 /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A6A8582A4ACB6C00166517 /* Planets.swift */; };
+		57A6A85B2A4ACBC300166517 /* PlanetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A6A85A2A4ACBC300166517 /* PlanetsViewModel.swift */; };
+		57A6A85D2A4ACBEC00166517 /* PlanetsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A6A85C2A4ACBEC00166517 /* PlanetsList.swift */; };
+		57A6A85F2A4ACC4500166517 /* DetailView_Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A6A85E2A4ACC4500166517 /* DetailView_Plan.swift */; };
+		57A6A8632A4B213E00166517 /* SpeciesDisc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A6A8622A4B213E00166517 /* SpeciesDisc.swift */; };
+		57A6A8652A4B302C00166517 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A6A8642A4B302C00166517 /* People.swift */; };
+		57A6A8672A4B306C00166517 /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A6A8662A4B306C00166517 /* PeopleViewModel.swift */; };
+		57A6A8692A4B30B000166517 /* PeopleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A6A8682A4B30B000166517 /* PeopleList.swift */; };
+		57A6A86B2A4B313A00166517 /* DetailView_People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A6A86A2A4B313A00166517 /* DetailView_People.swift */; };
+		57A6F6FB2A433D9500E54275 /* Star_Wars_SpeciesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A6F6FA2A433D9500E54275 /* Star_Wars_SpeciesApp.swift */; };
+		57A6F6FD2A433D9500E54275 /* SpeciesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A6F6FC2A433D9500E54275 /* SpeciesList.swift */; };
+		57A6F6FF2A433D9700E54275 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A6F6FE2A433D9700E54275 /* Assets.xcassets */; };
+		57A6F7022A433D9700E54275 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A6F7012A433D9700E54275 /* Preview Assets.xcassets */; };
+		57A6F70A2A43467300E54275 /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A6F7092A43467300E54275 /* Species.swift */; };
+		57A6F70C2A434A0E00E54275 /* SpeciesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A6F70B2A434A0E00E54275 /* SpeciesViewModel.swift */; };
+		57A6F70E2A435D4600E54275 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A6F70D2A435D4600E54275 /* DetailView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		57579FB52A49DEF4000AB293 /* Pagina_Inicial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagina_Inicial.swift; sourceTree = "<group>"; };
+		57A6A8582A4ACB6C00166517 /* Planets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planets.swift; sourceTree = "<group>"; };
+		57A6A85A2A4ACBC300166517 /* PlanetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsViewModel.swift; sourceTree = "<group>"; };
+		57A6A85C2A4ACBEC00166517 /* PlanetsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsList.swift; sourceTree = "<group>"; };
+		57A6A85E2A4ACC4500166517 /* DetailView_Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView_Plan.swift; sourceTree = "<group>"; };
+		57A6A8622A4B213E00166517 /* SpeciesDisc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesDisc.swift; sourceTree = "<group>"; };
+		57A6A8642A4B302C00166517 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
+		57A6A8662A4B306C00166517 /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
+		57A6A8682A4B30B000166517 /* PeopleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleList.swift; sourceTree = "<group>"; };
+		57A6A86A2A4B313A00166517 /* DetailView_People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView_People.swift; sourceTree = "<group>"; };
+		57A6F6F72A433D9500E54275 /* Star_Wars_Species.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Star_Wars_Species.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		57A6F6FA2A433D9500E54275 /* Star_Wars_SpeciesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star_Wars_SpeciesApp.swift; sourceTree = "<group>"; };
+		57A6F6FC2A433D9500E54275 /* SpeciesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesList.swift; sourceTree = "<group>"; };
+		57A6F6FE2A433D9700E54275 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		57A6F7012A433D9700E54275 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		57A6F7082A433EDC00E54275 /* Star-Wars-Species-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Star-Wars-Species-Info.plist"; sourceTree = SOURCE_ROOT; };
+		57A6F7092A43467300E54275 /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
+		57A6F70B2A434A0E00E54275 /* SpeciesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesViewModel.swift; sourceTree = "<group>"; };
+		57A6F70D2A435D4600E54275 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		57A6F6F42A433D9500E54275 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		57A6A86C2A4B3E6000166517 /* DetailModes */ = {
+			isa = PBXGroup;
+			children = (
+				57A6F70D2A435D4600E54275 /* DetailView.swift */,
+				57A6A85E2A4ACC4500166517 /* DetailView_Plan.swift */,
+				57A6A86A2A4B313A00166517 /* DetailView_People.swift */,
+			);
+			path = DetailModes;
+			sourceTree = "<group>";
+		};
+		57A6A8752A4B4CA300166517 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				57A6F6FC2A433D9500E54275 /* SpeciesList.swift */,
+				57A6A8682A4B30B000166517 /* PeopleList.swift */,
+				57A6A85C2A4ACBEC00166517 /* PlanetsList.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		57A6A8762A4B5BF900166517 /* APP */ = {
+			isa = PBXGroup;
+			children = (
+				57A6F6FA2A433D9500E54275 /* Star_Wars_SpeciesApp.swift */,
+			);
+			path = APP;
+			sourceTree = "<group>";
+		};
+		57A6A8772A4B5C2000166517 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				57A6F7092A43467300E54275 /* Species.swift */,
+				57A6A8582A4ACB6C00166517 /* Planets.swift */,
+				57A6A8642A4B302C00166517 /* People.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		57A6A8782A4B5C5600166517 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				57A6F70B2A434A0E00E54275 /* SpeciesViewModel.swift */,
+				57A6A8662A4B306C00166517 /* PeopleViewModel.swift */,
+				57A6A85A2A4ACBC300166517 /* PlanetsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		57A6F6EE2A433D9500E54275 = {
+			isa = PBXGroup;
+			children = (
+				57579FB52A49DEF4000AB293 /* Pagina_Inicial.swift */,
+				57A6F6F92A433D9500E54275 /* Star_Wars_Species */,
+				57A6F6F82A433D9500E54275 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		57A6F6F82A433D9500E54275 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				57A6F6F72A433D9500E54275 /* Star_Wars_Species.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		57A6F6F92A433D9500E54275 /* Star_Wars_Species */ = {
+			isa = PBXGroup;
+			children = (
+				57A6A8782A4B5C5600166517 /* ViewModel */,
+				57A6A8772A4B5C2000166517 /* Main */,
+				57A6A8762A4B5BF900166517 /* APP */,
+				57A6A8752A4B4CA300166517 /* List */,
+				57A6A86C2A4B3E6000166517 /* DetailModes */,
+				57A6F7082A433EDC00E54275 /* Star-Wars-Species-Info.plist */,
+				57A6F6FE2A433D9700E54275 /* Assets.xcassets */,
+				57A6F7002A433D9700E54275 /* Preview Content */,
+			);
+			path = Star_Wars_Species;
+			sourceTree = "<group>";
+		};
+		57A6F7002A433D9700E54275 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				57A6F7012A433D9700E54275 /* Preview Assets.xcassets */,
+				57A6A8622A4B213E00166517 /* SpeciesDisc.swift */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		57A6F6F62A433D9500E54275 /* Star_Wars_Species */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57A6F7052A433D9700E54275 /* Build configuration list for PBXNativeTarget "Star_Wars_Species" */;
+			buildPhases = (
+				57A6F6F32A433D9500E54275 /* Sources */,
+				57A6F6F42A433D9500E54275 /* Frameworks */,
+				57A6F6F52A433D9500E54275 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Star_Wars_Species;
+			productName = Star_Wars_Species;
+			productReference = 57A6F6F72A433D9500E54275 /* Star_Wars_Species.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		57A6F6EF2A433D9500E54275 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					57A6F6F62A433D9500E54275 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 57A6F6F22A433D9500E54275 /* Build configuration list for PBXProject "Star_Wars_Species" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 57A6F6EE2A433D9500E54275;
+			productRefGroup = 57A6F6F82A433D9500E54275 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				57A6F6F62A433D9500E54275 /* Star_Wars_Species */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		57A6F6F52A433D9500E54275 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57A6F7022A433D9700E54275 /* Preview Assets.xcassets in Resources */,
+				57A6F6FF2A433D9700E54275 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		57A6F6F32A433D9500E54275 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57A6A8672A4B306C00166517 /* PeopleViewModel.swift in Sources */,
+				57A6F6FD2A433D9500E54275 /* SpeciesList.swift in Sources */,
+				57A6A8592A4ACB6C00166517 /* Planets.swift in Sources */,
+				57A6F70C2A434A0E00E54275 /* SpeciesViewModel.swift in Sources */,
+				57A6A8632A4B213E00166517 /* SpeciesDisc.swift in Sources */,
+				57A6A8652A4B302C00166517 /* People.swift in Sources */,
+				57A6A86B2A4B313A00166517 /* DetailView_People.swift in Sources */,
+				57A6F70A2A43467300E54275 /* Species.swift in Sources */,
+				57A6A85B2A4ACBC300166517 /* PlanetsViewModel.swift in Sources */,
+				57579FB62A49DEF4000AB293 /* Pagina_Inicial.swift in Sources */,
+				57A6A85F2A4ACC4500166517 /* DetailView_Plan.swift in Sources */,
+				57A6F70E2A435D4600E54275 /* DetailView.swift in Sources */,
+				57A6F6FB2A433D9500E54275 /* Star_Wars_SpeciesApp.swift in Sources */,
+				57A6A8692A4B30B000166517 /* PeopleList.swift in Sources */,
+				57A6A85D2A4ACBEC00166517 /* PlanetsList.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		57A6F7032A433D9700E54275 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		57A6F7042A433D9700E54275 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		57A6F7062A433D9700E54275 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Star_Wars_Species/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Star-Wars-Species-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "istec.Star-Wars-Species";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		57A6F7072A433D9700E54275 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Star_Wars_Species/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Star-Wars-Species-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "istec.Star-Wars-Species";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		57A6F6F22A433D9500E54275 /* Build configuration list for PBXProject "Star_Wars_Species" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57A6F7032A433D9700E54275 /* Debug */,
+				57A6F7042A433D9700E54275 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57A6F7052A433D9700E54275 /* Build configuration list for PBXNativeTarget "Star_Wars_Species" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57A6F7062A433D9700E54275 /* Debug */,
+				57A6F7072A433D9700E54275 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 57A6F6EF2A433D9500E54275 /* Project object */;
+}
