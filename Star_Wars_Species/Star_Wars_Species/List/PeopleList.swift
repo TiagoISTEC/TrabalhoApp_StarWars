@@ -14,7 +14,17 @@ struct PeopleList: View {
         @State private var audioPlayer: AVAudioPlayer!
         @State private var lastSound = -1
         @State private var pesquisa=""
-        
+    
+    //Variavel para retornar lista toda se a pesquisa estiver vazia ou entao os resultados da pesquisa
+    
+    var filteredPeople: [People] {
+            if pesquisa.isEmpty {
+                return peopleVM.peopleArray
+            } else {
+                return peopleVM.peopleArray.filter { $0.name.lowercased().contains(pesquisa.lowercased()) }
+            }
+        }
+    
         var body: some View {
             NavigationStack {
                 ZStack{
@@ -22,17 +32,23 @@ struct PeopleList: View {
                         Section{
                             HStack{
                                 
+                                //barra de pesquisa
+                                
                                 TextField("Search", text: $pesquisa)
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                                Button("Search"){
-                                    peopleVM.search(term: pesquisa)
-                                }
+                                
                                 
                             }
                         }
-                        ForEach(peopleVM.peopleArray) { peoples in
+                        
+                        //correr a lista
+                        
+                        ForEach(filteredPeople) { peoples in
                             LazyVStack {
                                 NavigationLink {
+                                    
+                                    //redereciona para view dos detalhes
+                                    
                                     DetailView_People(people:peoples)
                                     
                                     
@@ -43,7 +59,7 @@ struct PeopleList: View {
                                 
                             }
                             .task{
-                                await peopleVM.loadNextIfNeeded(peopler: peoples)
+                                await peopleVM.loadNextIfNeeded(people: peoples)
                             }
                             
                         }
@@ -62,6 +78,9 @@ struct PeopleList: View {
               
               .toolbar{
               ToolbarItem(placement: .bottomBar){
+                  
+                  //botao para carregar todos os resultados
+                  
                   Button("Load All") {
                   Task {
                       await peopleVM.loadAll()
@@ -69,9 +88,16 @@ struct PeopleList: View {
                 }
               }
                   ToolbarItem(placement: .status) {
-                      Text("\(peopleVM.peopleArray.count)People Returned")
+                      
+                      //Mostra a quantidade de especies
+                      
+                      Text("\(peopleVM.peopleArray.count) People")
                   }
                   ToolbarItem(placement: .bottomBar){
+                      
+                      //botao para produzir um som
+                      
+                      
                       Button{
                           var nextSound: Int
                           repeat {
@@ -81,6 +107,9 @@ struct PeopleList: View {
                           playSound(soundName: "\(lastSound)")
                           
                       }label:{
+                          
+                          //selecionaar imagem do icon do som
+                          
                           Image ("Store_starwars (1)")
                           .resizable()
                           .scaledToFit()
@@ -95,6 +124,8 @@ struct PeopleList: View {
             }
         }
         
+    //funçao para produzir um som
+    
         func playSound(soundName: String){
             guard let soundFile = NSDataAsset (name: soundName) else{
                 print("ERROR: Could not read file named \(soundName)")

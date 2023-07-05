@@ -14,6 +14,17 @@ struct PlanetsList: View {
         @State private var lastSound = -1
         @State private var pesquisa=""
         
+    //Variavel para retornar lista toda se a pesquisa estiver vazia ou entao os resultados da pesquisa
+    
+    
+    var filteredPlanets: [Planets] {
+            if pesquisa.isEmpty {
+                return planetsVM.planetsArray
+            } else {
+                return planetsVM.planetsArray.filter { $0.name.lowercased().contains(pesquisa.lowercased()) }
+            }
+        }
+    
         var body: some View {
             NavigationStack {
                 ZStack{
@@ -21,17 +32,20 @@ struct PlanetsList: View {
                         Section{
                             HStack{
                                 
+                                //barra de pesquisa
+                                
                                 TextField("Search", text: $pesquisa)
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                                Button("Search"){
-                                    planetsVM.search(term: pesquisa)
-                                }
+                                
                                 
                             }
                         }
-                        ForEach(planetsVM.planetsArray) { planet in
+                        ForEach(filteredPlanets) { planet in
                             LazyVStack {
                                 NavigationLink {
+                                    
+                                    //redereciona para view dos detalhes
+                                    
                                     DetailView_Plan(planets:planet)
                                     
                                     
@@ -61,6 +75,9 @@ struct PlanetsList: View {
               
               .toolbar{
               ToolbarItem(placement: .bottomBar){
+                  
+                  //botao para carregar todos os resultados
+                  
                   Button("Load All") {
                   Task {
                       await planetsVM.loadAll()
@@ -68,9 +85,16 @@ struct PlanetsList: View {
                 }
               }
                   ToolbarItem(placement: .status) {
-                      Text("\(planetsVM.planetsArray.count)Planets Returned")
+                      
+                      //Mostra a quantidade de especies
+                      
+                      Text("\(planetsVM.planetsArray.count) Planets")
                   }
                   ToolbarItem(placement: .bottomBar){
+                      
+                      //botao para produzir um som
+                      
+                      
                       Button{
                           var nextSound: Int
                           repeat {
@@ -80,6 +104,9 @@ struct PlanetsList: View {
                           playSound(soundName: "\(lastSound)")
                           
                       }label:{
+                          
+                          //selecionaar imagem do icon do som
+                          
                           Image ("Store_starwars (2)")
                           .resizable()
                           .scaledToFit()
@@ -93,6 +120,8 @@ struct PlanetsList: View {
                 await planetsVM.getData()
             }
         }
+    
+    //funçao para produzir um som
         
         func playSound(soundName: String){
             guard let soundFile = NSDataAsset (name: soundName) else{

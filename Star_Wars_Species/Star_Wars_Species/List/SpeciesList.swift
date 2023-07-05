@@ -13,8 +13,20 @@ struct SpeciesList: View {
         @State private var audioPlayer: AVAudioPlayer!
         @State private var lastSound = -1
         @State private var pesquisa=""
+        @State private var n=0;
+    
+    //Variavel para retornar lista toda se a pesquisa estiver vazia ou entao os resultados da pesquisa
 
-        
+    var filteredSpecies: [Species] {
+            if pesquisa.isEmpty {
+                return speciesVM.speciesArray
+            } else {
+                return speciesVM.speciesArray.filter { $0.name.lowercased().contains(pesquisa.lowercased()) }
+            }
+        }
+    
+   
+    
         var body: some View {
             NavigationStack {
                 ZStack{
@@ -22,46 +34,57 @@ struct SpeciesList: View {
                     List{
                         Section() {
                             HStack{
+                                
+                                //barra de pesquisa
+                                
                                 TextField("Search", text: $pesquisa)
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                                Button("Search"){
-                                    speciesVM.search(term: pesquisa)
-                                }}
+                               }
                         }
-                        ForEach(speciesVM.speciesArray) { species in
-                            LazyVStack {
-                                NavigationLink {
-                                    DetailView(species:species)
+                        
+                        //correr a lista
+                        
+                            ForEach(filteredSpecies) { species in
+                                LazyVStack {
+                                    NavigationLink {
+                                        
+                                        //redereciona para view dos detalhes
+                                        
+                                        DetailView(species:species)
+                                        
+                                        
+                                    }label:{
+                                        
+                                        Text(species.name)
+                                    }
                                     
-                                    
-                                }label:{
-                                    
-                                    Text(species.name)
+                                }
+                                .task{
+                                    await speciesVM.loadNextIfNeeded(species: species)
                                 }
                                 
-                            }
-                            .task{
-                                await speciesVM.loadNextIfNeeded(species: species)
+                                
                             }
                             
+                            .font (.title)
+                            .listStyle(.plain)
+                            .navigationTitle("Species")
                             
-                        }
-                        
-                        .font (.title)
-                        .listStyle(.plain)
-                        .navigationTitle("Species")
-                        
-                        if speciesVM.isLoading{
-                            ProgressView()
-                                .scaleEffect(4)
-                                .tint(.green)
-                        }
+                            if speciesVM.isLoading{
+                                ProgressView()
+                                    .scaleEffect(4)
+                                    .tint(.green)
+                            }
+                       
                         
                     }
               }
               
               .toolbar{
               ToolbarItem(placement: .bottomBar){
+                  
+                  //botao para carregar todos os resultados
+                  
                   Button("Load All") {
                   Task {
                       await speciesVM.loadAll()
@@ -69,9 +92,15 @@ struct SpeciesList: View {
                 }
               }
                   ToolbarItem(placement: .status) {
-                      Text("\(speciesVM.speciesArray.count)Specie Returned")
+                      
+                      //Mostra a quantidade de especies
+                      
+                      Text("\(speciesVM.speciesArray.count) Species")
                   }
                   ToolbarItem(placement: .bottomBar){
+                      
+                      //botao para produzir um som
+                      
                       Button{
                           var nextSound: Int
                           repeat {
@@ -80,7 +109,11 @@ struct SpeciesList: View {
                           lastSound = nextSound
                           playSound(soundName: "\(lastSound)")
                           
+                          
                       }label:{
+                          
+                          //selecionaar imagem do icon do som
+                          
                           Image ("peek")
                           .resizable()
                           .scaledToFit()
@@ -94,7 +127,9 @@ struct SpeciesList: View {
                 await speciesVM.getData()
             }
         }
-        
+   
+    //funçao para produzir um som
+    
         func playSound(soundName: String){
             guard let soundFile = NSDataAsset (name: soundName) else{
                 print("ERROR: Could not read file named \(soundName)")
@@ -109,6 +144,7 @@ struct SpeciesList: View {
         }
         
     }
+
 
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
