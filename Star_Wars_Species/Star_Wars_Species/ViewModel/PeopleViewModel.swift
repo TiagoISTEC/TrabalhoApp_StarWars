@@ -16,7 +16,13 @@ class PeopleViewModel: ObservableObject {
         
         @Published var peopleArray: [People] = []
         @Published var isLoading = false
+    @Published var searchResultsArray: [People] = []
+    
+    //URL da API
+    
         var urlString = "https://swapi.dev/api/people/"
+    
+    //Funçao para carregar o URL (caso ele reconheça ele entra caso de negativo vai dar erro)
         
         func getData() async {
             isLoading = true
@@ -36,6 +42,9 @@ class PeopleViewModel: ObservableObject {
                     peopleArray += returned.results
                     isLoading = false
                 } catch {
+                    
+                    //erro ao coverter ao fazer
+                    
                     print ("JSON ERROR: Could not convert data into JSON. \(error.localizedDescription)")
                     isLoading = false
                 }
@@ -44,34 +53,27 @@ class PeopleViewModel: ObservableObject {
                 isLoading = false
             }
         }
-        
-        func loadNextIfNeeded(peopler: People) async {
-            guard let lastPeople = peopleArray.last else {return}
-            if lastPeople.id == peopler.id && urlString != "" {
-                await getData()
-            }
-        }
     
-    func search(term: String) {
-        Task {
-            isLoading = true
-            let url = URL(string: "https://swapi.dev/api/people/?search=\(term)")!
-            do {
-                let (data, _) = try await URLSession.shared.data(from: url)
-                let searchResults = try JSONDecoder().decode(Returned.self, from: data)
-                peopleArray = searchResults.results
-                isLoading = false
-            } catch {
-                print("JSON ERROR: Could not convert data into JSON. \(error.localizedDescription)")
-                isLoading = false
+    
+    
+    //funçao para carregar o resultado que o utlizador quer e descarta o resto
+    
+    func loadNextIfNeeded(people: People) async {
+        guard let lastPeople = peopleArray.last else { return }
+        if lastPeople.id == people.id {
+            if !searchResultsArray.isEmpty {
+                peopleArray += searchResultsArray
+                searchResultsArray.removeAll()
+            } else if urlString != "" {
+                await getData()
             }
         }
     }
         
         func loadAll() async {
-            guard urlString != "" else {return} //we' re done if urlString == "". No more pages
+            guard urlString != "" else {return} 
             await getData()
-            await loadAll()
+            
         }
     
 }

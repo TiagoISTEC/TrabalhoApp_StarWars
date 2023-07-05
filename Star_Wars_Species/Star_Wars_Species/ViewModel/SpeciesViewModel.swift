@@ -13,11 +13,17 @@ class SpeciesViewModel: ObservableObject {
         var next: String?
         var results: [Species]
     }
-        
+    
         @Published var speciesArray: [Species] = []
         @Published var isLoading = false
+        @Published var searchResultsArray: [Species] = []
+    
+        //URL da API
+    
         var urlString = "https://swapi.dev/api/species/"
         
+        //Funçao para carregar o URL (caso ele reconheça ele entra caso de negativo vai dar erro)
+    
         func getData() async {
             isLoading = true
             print ("We are accssing the url  \(urlString)")
@@ -36,6 +42,9 @@ class SpeciesViewModel: ObservableObject {
                     speciesArray += returned.results
                     isLoading = false
                 } catch {
+                    
+                    //erro ao coverter ao fazer
+                    
                     print ("JSON ERROR: Could not convert data into JSON. \(error.localizedDescription)")
                     isLoading = false
                 }
@@ -44,33 +53,29 @@ class SpeciesViewModel: ObservableObject {
                 isLoading = false
             }
         }
-        
-        func loadNextIfNeeded(species: Species) async {
-            guard let lastSpecies = speciesArray.last else {return}
-            if lastSpecies.id == species.id && urlString != "" {
-                await getData()
-            }
-        }
-    func search(term: String) {
-        Task {
-            isLoading = true
-            let url = URL(string: "https://swapi.dev/api/species/?search=\(term)")!
-            do {
-                let (data, _) = try await URLSession.shared.data(from: url)
-                let searchResults = try JSONDecoder().decode(Returned.self, from: data)
-                speciesArray = searchResults.results
-                isLoading = false
-            } catch {
-                print("JSON ERROR: Could not convert data into JSON. \(error.localizedDescription)")
-                isLoading = false
-            }
+    
+
+    
+   
+    //funçao para carregar o resultado que o utlizador quer e descarta o resto
+    
+func loadNextIfNeeded(species: Species) async {
+    guard let lastSpecies = speciesArray.last else { return }
+    if lastSpecies.id == species.id {
+        if !searchResultsArray.isEmpty {
+            speciesArray += searchResultsArray
+            searchResultsArray.removeAll()
+        } else if urlString != "" {
+            await getData()
         }
     }
-        
+}
+    
+    // funçao para carregar toda a data 
         func loadAll() async {
             guard urlString != "" else {return} //we' re done if urlString == "". No more pages
             await getData()
-            await loadAll()
+            
         }
     
 }
